@@ -1,10 +1,14 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
 const app = express();
-const PORT = 5173;
+import { fileURLToPath } from 'url';
+const PORT = 8080;
 
 import dotenv from 'dotenv';
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static files
 app.use('/static', express.static(path.join(__dirname, 'static')));

@@ -1,6 +1,12 @@
-import { requestAndPlayAnimation } from './avatar.js';
+//import { requestAndPlayAnimation } from './avatar.js';
 
-export async function sendMessage() {
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('send-btn');
+  console.log(123);
+  btn.addEventListener('click', sendMessage);
+});
+
+async function sendMessage() {
     const input = document.getElementById("message");
     const user_name = document.getElementById("user_name");
     const language = document.getElementById('language');
@@ -37,12 +43,10 @@ export async function sendMessage() {
         chat.innerHTML += `<div><span class="user-name">server:</span> ${data.error}</div>`;
     }
 
-    if (data.motion.length >= 3)
-        requestAndPlayAnimation(data.motion);
+    //if (data.motion.length >= 3)
+    //    requestAndPlayAnimation(data.motion);
     motion.innerHTML = data.motion;
 
     input.value = "";
     chat.scrollTop = chat.scrollHeight;
 }
-
-window.sendMessage = sendMessage;

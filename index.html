@@ -160,7 +160,7 @@
 </header>
 
 <script type="module" src="/static/message.js"></script>
-<script type="module" src="/static/avatar.js"></script>
+<!-- <script type="module" src="/static/avatar.js"></script> -->
 
 <div id="main">
     <div id="text-chat">
@@ -169,14 +169,14 @@
             <input class="user-name" type="text" id="user_name" placeholder="Your name..."/>
             <input type="text" id="message" placeholder="Type a message..."/>
             <button id="emoji-btn" class="user-emoji">😊</button>
-            <button onclick="sendMessage()">Send</button>
+            <button id="send-btn">Send</button>
         </div>
     </div>
     <div id="avatar-container"></div>
 </div>
 
 <script type="module">
-    import {EmojiButton} from '@joeattardi/emoji-button';
+    import {EmojiButton} from 'https://cdn.skypack.dev/@joeattardi/emoji-button';
 
     const button = document.querySelector('#emoji-btn');
     const picker = new EmojiButton({position: 'top-end', autoHide: true});
