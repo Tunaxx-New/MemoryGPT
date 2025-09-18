@@ -13,6 +13,8 @@ services:
       - ./init-db:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
+    networks:
+      - memorygpt_net
 
   backend:
     build:
@@ -27,6 +29,8 @@ services:
       - "8000"
     depends_on:
       - db
+    networks:
+      - memorygpt_net
 
   frontend:
     build:
@@ -40,6 +44,11 @@ services:
       - "8080:8080"
     depends_on:
       - backend
+    networks:
+      - memorygpt_net
 
 volumes:
   pgdata:
+
+networks:
+  memorygpt_net:
