@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile.backend
     container_name: memory_gpt_backend
     volumes:
-      - ./backend:/app
+      - ./:/app
     ports:
       - "8000:8000"
     depends_on:
