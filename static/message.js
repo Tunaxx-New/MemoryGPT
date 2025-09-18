@@ -1,8 +1,8 @@
+import {BACKEND_ROUTE} from './config.js';
 //import { requestAndPlayAnimation } from './avatar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('send-btn');
-  console.log(123);
   btn.addEventListener('click', sendMessage);
 });
 
@@ -25,7 +25,7 @@ async function sendMessage() {
     const loading = document.getElementById("loading");
     loading.style.display = "block";
 
-    const response = await fetch("http://localhost:8000/api/chat", {
+    const response = await fetch(`${BACKEND_ROUTE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
