@@ -32,7 +32,7 @@ services:
       dockerfile: Dockerfile.frontend
     container_name: memory_gpt_frontend
     volumes:
-      - ./frontend:/app
+      - ./:/app
       - /app/node_modules
     ports:
       - "8080:8080"

@@ -16,7 +16,13 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "three": "^0.151.3",
-    "vite": "^7.1.5"
+    "vite": "^7.1.5",
+    "rollup": "^4.50.2",
+    "@rollup/rollup-linux-x64-gnu": "^4.50.2"
+  },
+  "devDependencies": {
+    "rollup": "^4.50.2",
+    "@rollup/rollup-linux-x64-gnu": "^4.50.2"
   },
   "type": "module"
 }
