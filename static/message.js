@@ -22,6 +22,9 @@ async function sendMessage() {
 
     chat.innerHTML += `<div><span class="user-name">${userName} ${emojiButton.textContent}:</span> ${userMessage}</div>`;
 
+    const loading = document.getElementById("loading");
+    loading.style.display = "block";
+
     const response = await fetch("http://localhost:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -49,4 +52,6 @@ async function sendMessage() {
 
     input.value = "";
     chat.scrollTop = chat.scrollHeight;
+
+    loading.style.display = "none";
 }

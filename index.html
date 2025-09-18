@@ -141,6 +141,25 @@
             width: 100%;
             height: 100%;
         }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey background */
+            border-top: 4px solid #FFB343; /* Blue top */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto; /* center horizontally */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,6 +180,8 @@
 
 <script type="module" src="/static/message.js"></script>
 <!-- <script type="module" src="/static/avatar.js"></script> -->
+
+<div id="loading" class="spinner" style="display:none;"></div>
 
 <div id="main">
     <div id="text-chat">
